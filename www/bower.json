@@ -1,0 +1,30 @@
+{
+  "name": "sechrest-test9",
+  "homepage": "https://github.com/damadboat/sechrest-pfpc",
+  "authors": [
+    "Jason <damadboat@gmail.com>"
+  ],
+  "description": "test of polymer and firebase on phonegap-build",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "polymer",
+    "firebase",
+    "phonegap",
+    "helloworld"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-material": "PolymerElements/paper-material#^1.0.6"
+  }
+}

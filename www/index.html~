@@ -30,20 +30,70 @@
         <title>Hello World</title>
         <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
         <link rel="import" href="bower_components/paper-material/paper-material.html">
+        <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
     </head>
-    <body>
+<!--    <body onload="firebase_accesser()"> -->
+      <body>
         <div class="app">
             <h1>PhoneGap</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
+	    <paper-material elevation="1">
+              <p id="load1"> loading... </p>
+              <p id="load2"> loading... </p>
+              <p id="load3"> loading... </p>
+              <p id="load4"> loading... </p>
+              <p id="load5"> loading... </p>
+              <p id="load6"> loading... </p>
+              <p id="load7"> loading... </p>
+              <p id="load8"> loading... </p>
+              <p id="load9"> loading... </p>
+        </paper-material>
         </div>
+
+
+	
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
+<!--	<script> 
+	    function firebase_accesser() {
+                var myFirebaseRef = new Firebase("https://swiki.firebaseio.com/");
+                myFirebaseRef.child("9mile/0/company").on("value", function(snapshot) {
+                   document.getElementById("load1").innerHTML = snapshot.val();
+                });
+                myFirebaseRef.child("9mile/0/linkedin").on("value", function(snapshot) {
+                   document.getElementById("load2").innerHTML = snapshot.val();
+                });
+                myFirebaseRef.child("9mile/0/name").on("value", function(snapshot) {
+                   document.getElementById("load3").innerHTML = snapshot.val();
+                });
+                myFirebaseRef.child("9mile/0/photoUrl").on("value", function(snapshot) {
+                   document.getElementById("load4").innerHTML = snapshot.val();
+                });
+                myFirebaseRef.child("9mile/0/priority").on("value", function(snapshot) {
+                   document.getElementById("load5").innerHTML = snapshot.val();
+                });
+                myFirebaseRef.child("9mile/0/shortDescription").on("value", function(snapshot) {
+                   document.getElementById("load6").innerHTML = snapshot.val();
+                });
+                myFirebaseRef.child("9mile/0/twitter").on("value", function(snapshot) {
+                   document.getElementById("load7").innerHTML = snapshot.val();
+                });
+                myFirebaseRef.child("9mile/0/type").on("value", function(snapshot) {
+                   document.getElementById("load8").innerHTML = snapshot.val();
+                });
+                myFirebaseRef.child("9mile/0/url").on("value", function(snapshot) {
+                   document.getElementById("load9").innerHTML = snapshot.val();
+                });
+                
+            }
+        </script>
+-->
     </body>
 </html>
 

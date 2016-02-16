@@ -32,24 +32,25 @@
         <link rel="import" href="bower_components/paper-material/paper-material.html">
         <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
     </head>
-    <body onload="firebase_accesser()">
+<!--    <body onload="firebase_accesser()"> -->
+      <body>
         <div class="app">
             <h1>PhoneGap</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
-	<paper-material elevation="1">
-          <p id="load1"> loading... </p>
-          <p id="load2"> loading... </p>
-          <p id="load3"> loading... </p>
-          <p id="load4"> loading... </p>
-          <p id="load5"> loading... </p>
-          <p id="load6"> loading... </p>
-          <p id="load7"> loading... </p>
-          <p id="load8"> loading... </p>
-          <p id="load9"> loading... </p>
-        </paper-material>
+	    <paper-material elevation="1">
+              <p id="load1"> loading... </p>
+              <p id="load2"> loading... </p>
+              <p id="load3"> loading... </p>
+              <p id="load4"> loading... </p>
+              <p id="load5"> loading... </p>
+              <p id="load6"> loading... </p>
+              <p id="load7"> loading... </p>
+              <p id="load8"> loading... </p>
+              <p id="load9"> loading... </p>
+            </paper-material>
         </div>
 
 
@@ -59,7 +60,7 @@
         <script type="text/javascript">
             app.initialize();
         </script>
-	<script> 
+<!--	<script> 
 	    function firebase_accesser() {
                 var myFirebaseRef = new Firebase("https://swiki.firebaseio.com/");
                 myFirebaseRef.child("9mile/0/company").on("value", function(snapshot) {
@@ -92,6 +93,7 @@
                 
             }
         </script>
+-->
     </body>
 </html>
 

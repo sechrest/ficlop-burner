@@ -29,8 +29,8 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
         <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-        <link rel="import" href="bower_components/paper-material/paper-material.html">
-        <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+<!--    <link rel="import" href="bower_components/paper-material/paper-material.html">
+        <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script> -->
     </head>
 <!--    <body onload="firebase_accesser()"> -->
       <body>
@@ -50,7 +50,7 @@
               <p id="load7"> loading... </p>
               <p id="load8"> loading... </p>
               <p id="load9"> loading... </p>
-        </paper-material>
+            </paper-material>
         </div>
 
 

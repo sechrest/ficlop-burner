@@ -12,12 +12,12 @@ In your browser, open the file:
 
 ### PhoneGap CLI
 
-This repository is automatically downloaded by [phonegap-cli][phonegap-cli-url]
+This repo is automatically downloaded by [phonegap-cli][phonegap-cli-url]
 when you create a new application.
 
 ### PhoneGap Build
 
-Create a new app with the following repository:
+Create a new app with the following repo:
 
     https://github.com/phonegap/phonegap-start.git
 

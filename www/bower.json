@@ -20,6 +20,7 @@
     "tests"
   ],
   "dependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#~1.1.4"
+    "iron-component-page": "PolymerElements/iron-component-page#~1.1.4",
+    "paper-input": "PolymerElements/paper-input#~1.1.8"
   }
 }

@@ -1,0 +1,29 @@
+{
+  "Companies" : 
+  [ 
+    {
+      "Company"         : "Honey Dog",
+      "Icon"            : "https://brilliant-fire-2109.firebaseapp.com/img/HoneyDog.png",
+      "Motto"           : "A Honey Dog is a happy dog!",
+      "CEO"             : "Jason Trout",
+      "Employees Count" : 50,
+      "Public"          : true
+    }, 
+    {
+      "Company"         : "Cheese Wheels",
+      "Icon"            : "https://brilliant-fire-2109.firebaseapp.com/img/cheesewheels.png",
+      "Motto"           : "The best cheese for your offroad adventures!",
+      "CEO"             : "Che D. Erwhil",
+      "Employee Count"  : 5,
+      "Public"          : false
+    }, 
+    {
+      "Company"         : "Lycan Philanthropic",
+      "Icon"            : "https://brilliant-fire-2109.firebaseapp.com/img/lycanphilanthropic.png",
+      "Motto"           : "Were-beasts doing their best!",
+      "CEO"             : "Jacob Black",
+      "Employee Count"  : 10,
+      "Public"          : false
+    } 
+  ]
+}

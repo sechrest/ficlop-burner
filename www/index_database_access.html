@@ -47,10 +47,10 @@
 	            
 	        function firebase_accesser() {
                 var myFirebaseRef = new Firebase("https://brilliant-fire-2109.firebaseio.com/");
-                myFirebaseRef.child("Company").on("value", changeLoad1);
-                myFirebaseRef.child("Motto").on  ("value", changeLoad2);
-                myFirebaseRef.child("CEO").on    ("value", changeLoad3);
-                myFirebaseRef.child("Icon").on   ("value", changeImg1 );
+                myFirebaseRef.child("Companies/0/Company").on("value", changeLoad1);
+                myFirebaseRef.child("Companies/0/Motto").on  ("value", changeLoad2);
+                myFirebaseRef.child("Companies/0/CEO").on    ("value", changeLoad3);
+                myFirebaseRef.child("Companies/0/Icon").on   ("value", changeImg1 );
             }
         </script>
     </body>

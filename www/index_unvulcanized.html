@@ -77,8 +77,6 @@
                     
             </div>
         </paper-card>
-        
-        
 	    <script>
 	        var companyDatabase = {};
 	        var companyIndex    = 0;
@@ -87,16 +85,14 @@
 	        {
 	            document.getElementById("user_email_field").value = "";
 	            document.getElementById("password_field").value = "";
-	            if (true)
+	            if (error)
 	            {
-	                document.getElementById("loginSuccessFail_field").innerHTML = "Invalid login credentials!";
+	                document.getElementById("loginSuccessFail_field").innerHTML = "Invalid login credentials";
 	            }
 	            else
 	            {
 	                document.getElementById("loginSuccessFail_field").innerHTML = "";
-	            }
-
-	        }
+	        }   }
 	        function provideUserCredentials()
 	        {
 	            myFirebaseRef.authWithPassword({

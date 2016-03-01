@@ -14,15 +14,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
         <script             src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <link rel="import" href="../bower_components/iron-input/iron-input.html">
         <link rel="import" href="../bower_components/paper-button/paper-button.html">
         <link rel="import" href="../bower_components/paper-card/paper-card.html">
+        <link rel="import" href="../bower_components/paper-input/paper-input.html">
+        
+        
+<!--    <link rel="import" href="../bower_components/paper-input-container.html">
+        <link rel="import" href="../bower_components/paper-input-error.html">
+        <link rel="import" href="../bower_components/paper-textarea.html"> -->
+  
         <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
     </head>
 
     <body unresolved onload="firebase_accesser()">
         <paper-card heading="---" image="http://placehold.it/350x150/FFC107/000000" id="headerImage">
             <div class="card-content">
-                <table border="1">
+                <table border="0">
                     <tr>
                         <td>CEO</td>
                         <td id="CEO_Field">...</td>
@@ -32,41 +40,107 @@
                         <td id="Motto_Field">...</td>
                     </tr>
                 </table>
+                <table border="0">
+                    <tr>
+                        <td><paper-input always-float-label 
+                                         auto-validate allowed-pattern="[0-9]"
+                                         label="Employee Count = ?" id="EmployeeCount_Field"></paper-input></td>
+                        <td><paper-button onclick="changeEmployeeCountInDatabase()">Update</paper-button></td>
+                    </tr>
+                </table>
             </div>
             <div class="card-actions">
-                <paper-button>Go Left</paper-button> <!--&lsaqou-->
-                <paper-button>Go Right</paper-button> <!--&rsaqou-->
+                <paper-button onclick="displayCompanyXm1()">(-</paper-button> <!--&lsaqou-->
+                <paper-button onclick="displayCompanyXp1()">-)</paper-button> <!--&rsaqou-->
+            </div>
+            <div>
+                <table border="0">
+                    <tr>
+                        <td><paper-input always-float-label auto-validate 
+                                         pattern="*" 
+                                         error-message="user credentials did not match a validated user"
+                                         label="user email" 
+                                         id="user_email_field">
+                            </paper-input></td>
+                        <td><p id="loginSuccessFail_field"></p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                           <paper-input always-float-label auto-validate 
+                                        pattern="*" 
+                                        error-message="-"
+                                        label="password" 
+                                        id="password_field"> 
+                        </paper-input></td>
+                        <td><paper-button onclick="provideUserCredentials()">Log in</paper-button></td>
+                    </tr>
+                    
             </div>
         </paper-card>
-
-	    <script> 
-	        function changeCEO_Field(databaseReply)          
+        
+        
+	    <script>
+	        var companyDatabase = {};
+	        var companyIndex    = 0;
+	        var myFirebaseRef;
+	        function loginReply(error, authData)
 	        {
-	           console.log("changeCEO_Field databaseReply = " + databaseReply.val());
-	           document.getElementById("CEO_Field").innerHTML   = databaseReply.val();
+	            document.getElementById("user_email_field").value = "";
+	            document.getElementById("password_field").value = "";
+	            if (true)
+	            {
+	                document.getElementById("loginSuccessFail_field").innerHTML = "Invalid login credentials!";
+	            }
+	            else
+	            {
+	                document.getElementById("loginSuccessFail_field").innerHTML = "";
+	            }
+
 	        }
-            function changeMotto_Field(databaseReply)        
-            {
-                console.log("changeMotto_Field databaseReply = " + databaseReply.val());
-                document.getElementById("Motto_Field").innerHTML = databaseReply.val();
-                
-            }
-            function changeHeaderLabel(databaseReply)        
-            {
-                console.log("changeHeaderLabel databaseReply = " + databaseReply.val());
-                document.getElementById("headerImage").heading   = databaseReply.val();
-            }
-            function changeHeaderImage(databaseReply)        
-            {
-                console.log("changeHeaderImage databaseReply = " + databaseReply.val());
-                document.getElementById("headerImage").image     = databaseReply.val();
-            }
+	        function provideUserCredentials()
+	        {
+	            myFirebaseRef.authWithPassword({
+                    "email"    : document.getElementById("user_email_field").value,
+                    "password" : document.getElementById("password_field").value,
+                }, loginReply);  
+	        }
+	        function changeEmployeeCountInDatabase()
+	        {
+	            var whichCompanyRef = myFirebaseRef.child("Companies").child("0");
+                whichCompanyRef.update({
+                    "Employee Count": Number(document.getElementById("EmployeeCount_Field").value)
+                });
+	            document.getElementById("EmployeeCount_Field").value = "";
+	        }
+	        function displayCompanyXm1()
+	        {
+	            if (companyIndex == 0) {companyIndex = 2;}
+	            else                   {companyIndex = companyIndex -1;}
+	            changeCompanyDisplay(companyIndex);
+	        }
+	        function displayCompanyXp1()
+	        {
+	            if (companyIndex == 2) {companyIndex = 0;}
+	            else                   {companyIndex = companyIndex +1;}
+	            changeCompanyDisplay(companyIndex);
+	        }
+	    
+	        function updateLocalCompanyData(databaseReply)
+	        {
+	            companyDatabase = databaseReply.val();
+	            changeCompanyDisplay(companyIndex);
+	        }
+	        function changeCompanyDisplay(whichIndex)
+	        {
+	            document.getElementById("CEO_Field").innerHTML       = companyDatabase[whichIndex]["CEO"];
+	            document.getElementById("Motto_Field").innerHTML     = companyDatabase[whichIndex]["Motto"];
+	            document.getElementById("headerImage").image         = companyDatabase[whichIndex]["Icon"];
+	            document.getElementById("headerImage").heading       = companyDatabase[whichIndex]["Company"];
+	            document.getElementById("EmployeeCount_Field").label       = "Employee Count = " + companyDatabase[whichIndex]["Employee Count"];
+	        }
 	        function firebase_accesser() {
-                var myFirebaseRef = new Firebase("https://brilliant-fire-2109.firebaseio.com/");
-                myFirebaseRef.child("Motto").on  ("value", changeMotto_Field);
-                myFirebaseRef.child("CEO").on    ("value", changeCEO_Field);
-                myFirebaseRef.child("Company").on("value", changeHeaderLabel);
-                myFirebaseRef.child("Icon").on   ("value", changeHeaderImage);
+                myFirebaseRef = new Firebase("https://brilliant-fire-2109.firebaseio.com/");
+                myFirebaseRef.child("Companies").on  ("value", updateLocalCompanyData);
             }
         </script>
     </body>

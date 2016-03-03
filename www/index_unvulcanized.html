@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Ficlop Demo</title>
-        <!--
+<!--
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
@@ -22,7 +22,10 @@
         
 <!--    <link rel="import" href="../bower_components/paper-input-container.html">
         <link rel="import" href="../bower_components/paper-input-error.html">
-        <link rel="import" href="../bower_components/paper-textarea.html"> -->
+        <link rel="import" href="../bower_components/paper-textarea.html">
+
+        98281b8d77b2dd59d706097b8e9f637c1894b8de
+-->
   
         <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
     </head>
@@ -52,6 +55,7 @@
             <div class="card-actions">
                 <paper-button onclick="displayCompanyXm1()">(-</paper-button> <!--&lsaqou-->
                 <paper-button onclick="displayCompanyXp1()">-)</paper-button> <!--&rsaqou-->
+                
             </div>
             <div>
                 <table border="0">
@@ -128,11 +132,14 @@
 	        }
 	        function changeCompanyDisplay(whichIndex)
 	        {
+	            //TODO disable re-draw
+	            //http://stackoverflow.com/questions/1357361/how-to-freeze-web-browsers-repaints-while-changing-visibility-of-elements
 	            document.getElementById("CEO_Field").innerHTML       = companyDatabase[whichIndex]["CEO"];
 	            document.getElementById("Motto_Field").innerHTML     = companyDatabase[whichIndex]["Motto"];
 	            document.getElementById("headerImage").image         = companyDatabase[whichIndex]["Icon"];
 	            document.getElementById("headerImage").heading       = companyDatabase[whichIndex]["Company"];
 	            document.getElementById("EmployeeCount_Field").label       = "Employee Count = " + companyDatabase[whichIndex]["Employee Count"];
+	            //TODO enable & perform re-draw
 	        }
 	        function firebase_accesser() {
                 myFirebaseRef = new Firebase("https://brilliant-fire-2109.firebaseio.com/");

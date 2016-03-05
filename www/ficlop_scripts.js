@@ -21,7 +21,7 @@ function loginReply(error, authData)
 	}
 	else
 	{
-	   loadPage("/www/polymer_card_browser.html");
+	   loadPage("ficlop_card_browser.html");
 	    myFirebaseRef.child("Companies").on  ("value", updateLocalCompanyData);
 }   }
 

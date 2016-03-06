@@ -100,7 +100,7 @@ function changeCompanyDisplay(whichIndex)
 
 function changeEmployeeCountInDatabase()
 {
-	var whichCompanyRef = myFirebaseRef.child("Companies").child(companyIndex);
+	var whichCompanyRef = myFirebaseRef.child("CompaniesPublic").child(companyIndex);
     whichCompanyRef.update({"Employee Count": Number(document.getElementById("EmployeeCount_Field").value)});
 	document.getElementById("EmployeeCount_Field").value = "";
 }

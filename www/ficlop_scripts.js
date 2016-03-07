@@ -4,12 +4,12 @@ var companyIndex    = 0;
 var myFirebaseRef = null;
 
 
-//http://stackoverflow.com/questions/18930361/how-to-load-another-html-file-using-js
 function loadLogin()
 {
 	document.body.innerHTML = loadPage("ficlop_login.html")
 }
 
+//http://stackoverflow.com/questions/18930361/how-to-load-another-html-file-using-js
 function loadPage(href)
 {
 	var xmlhttp = new XMLHttpRequest();
@@ -72,10 +72,6 @@ function changeCompanyDisplay(whichIndex)
 	//JET wait until the two "updateLocalCompanyData" functions are finished before making any DOM changes
 	if ((companyDatabase.length == 0) || (companyDatabasePrivate.length == 0))
 		return;
-	//JET create a clone of the DOM, for modification. This is done to avoid reflows where possible
-	//var domClone = document.cloneNode(true); 
-	
-	
 	document.getElementById("CEO_Field").innerHTML          = companyDatabase[whichIndex]["CEO"];
 	document.getElementById("Motto_Field").innerHTML        = companyDatabase[whichIndex]["Motto"];
 	document.getElementById("headerImage").image            = companyDatabase[whichIndex]["Icon"];
@@ -95,8 +91,7 @@ function changeCompanyDisplay(whichIndex)
 		document.getElementById("hiddenDataDivider").innerHTML = "<div></div>";
 		document.getElementById("EmployeeCount_Field").disabled = true;
 		document.getElementById("UpdateEmployeeCountButton").disabled = true;		
-	}	
-}	
+}	}	
 
 function changeEmployeeCountInDatabase()
 {

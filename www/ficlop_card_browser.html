@@ -1,4 +1,4 @@
-<div>
+<div id="card_browser_outer_div">
     <paper-card heading="---" image="" id="headerImage">
         <div class="card-content">
             <table border="0">
@@ -16,7 +16,7 @@
                     <td><paper-input always-float-label 
                                      auto-validate allowed-pattern="[0-9]"
                                      label="Employee Count = ?" id="EmployeeCount_Field"></paper-input></td>
-                    <td><paper-button id="UpdateEmployeeCountButton" onclick="changeEmployeeCountInDatabase()">Update</paper-button></td>
+                    <td><paper-button id="UpdateEmployeeCountButton" onclick="changeEmployeeCountInDatabase()" raised>Update</paper-button></td>
                 </tr>
             </table>
             <div id ="hiddenDataDivider">

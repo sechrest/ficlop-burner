@@ -1,0 +1,24 @@
+{
+  "rules": 
+  {
+    "CompaniesPrivate" : 
+    {
+      "$CompanyPrivateIndex" : 
+      {
+        ".read":  "root.child('CompaniesAuthorizedUIDs').child($CompanyPrivateIndex).child(auth.uid).exists() || root.child('masterAdminIDs').child(auth.uid).exists()",
+        ".write": "root.child('CompaniesAuthorizedUIDs').child($CompanyPrivateIndex).child(auth.uid).exists() || root.child('masterAdminIDs').child(auth.uid).exists()" 
+        
+    } },
+    "CompaniesPublic" :
+    {
+      ".read" :  true,
+      "$CompanyPublicIndex" : 
+      {
+        ".write": "root.child('CompaniesAuthorizedUIDs').child($CompanyPublicIndex).child(auth.uid).exists() || root.child('masterAdminIDs').child(auth.uid).exists()"   
+    } },
+    
+    "CompaniesAuthorizedUIDs" : 
+    {
+        ".read"  : true,
+        ".write" : true
+} } }

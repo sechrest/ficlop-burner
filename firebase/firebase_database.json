@@ -1,0 +1,46 @@
+{
+  "CompaniesAuthorizedUIDs" : [ {
+    "00000000-0000-0000-0000-000000000000" : true,
+    "00000000-0000-0000-0000-000000000001" : true,
+    "00000000-0000-0000-0000-000000000002" : true
+  }, {
+    "00000000-0000-0000-0000-000000000000" : true,
+    "00000000-0000-0000-0000-000000000001" : true,
+    "00000000-0000-0000-0000-000000000002" : true
+  }, {
+    "00000000-0000-0000-0000-000000000000" : true,
+    "00000000-0000-0000-0000-000000000001" : true,
+    "00000000-0000-0000-0000-000000000002" : true
+  } ],
+  "CompaniesPrivate" : [ {
+    "BankBalance" : "$57,043.11"
+  }, {
+    "BankBalance" : "$1.79"
+  }, {
+    "BankBalance" : "$1230.11"
+  } ],
+  "CompaniesPublic" : [ {
+    "CEO" : "Harry H. Huskiver",
+    "Company" : "Honey Hound",
+    "Employee Count" : 90,
+    "Icon" : "https://brilliant-fire-2109.firebaseapp.com/img/honeydog.png",
+    "Motto" : "A Honey Hound is a happy hound!"
+  }, {
+    "CEO" : "Che D. Erwhil",
+    "Company" : "Cheese Wheels",
+    "Employee Count" : 50,
+    "Icon" : "https://brilliant-fire-2109.firebaseapp.com/img/cheesewheels.png",
+    "Motto" : "The best cheese for your offroad adventures!"
+  }, {
+    "CEO" : "Jacob Black",
+    "Company" : "Lycan Philanthropic",
+    "Employee Count" : 10,
+    "Icon" : "https://brilliant-fire-2109.firebaseapp.com/img/lycanphilanthropic.png",
+    "Motto" : "Were-beasts doing their best!"
+  } ],
+  "masterAdminIDs" : {
+    "00000000-0000-0000-0000-000000000000" : true,
+    "00000000-0000-0000-0000-000000000001" : true,
+    "00000000-0000-0000-0000-000000000002" : true
+  }
+}

@@ -32,7 +32,7 @@
     </head>
     <body unresolved onload="firebase_accesser()">
         <div>
-            <p id="load1"> loading... </p>
+            <p id="load1"> loading... more stuff here....  </p>
             <p id="load2"> </p>
             <p id="load3"> </p>
             <img id="img1" src=""/>
@@ -45,7 +45,7 @@
 	        function changeImg1(databaseReply)  {document.getElementById("img1") .src       = databaseReply.val();}
 	            
 	        function firebase_accesser() {
-                var myFirebaseRef = new Firebase("https://brilliant-fire-2109.firebaseio.com/");
+                var myFirebaseRef = new Firebase("https://jasficlopdemo.firebaseio.com/");
                 myFirebaseRef.child("CompaniesPublic/0/Company").on("value", changeLoad1);
                 myFirebaseRef.child("CompaniesPublic/0/Motto").on  ("value", changeLoad2);
                 myFirebaseRef.child("CompaniesPublic/0/CEO").on    ("value", changeLoad3);
